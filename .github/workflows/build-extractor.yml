@@ -12,9 +12,7 @@ jobs:
 
     steps:
       - name: Checkout NewPipeExtractor
-        uses: actions/checkout@v4
-        with:
-          ref: v0.26.5
+       uses: actions/checkout@v4
 
       - name: Set up Java 17
         uses: actions/setup-java@v4
