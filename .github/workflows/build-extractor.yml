@@ -23,7 +23,7 @@ jobs:
       - name: Build extractor
         run: |
           chmod +x gradlew
-          ./gradlew build
+          ./gradlew assemble
 
       - name: Collect JAR files
         run: |
