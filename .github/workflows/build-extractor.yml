@@ -23,15 +23,12 @@ jobs:
       - name: Build extractor
         run: |
           chmod +x gradlew
-          ./gradlew assemble
+          ./gradlew :extractor:jar --no-daemon
 
       - name: Collect JAR files
         run: |
           mkdir -p output
-          find . -type f -path "*/build/libs/*.jar" \
-            ! -name "*-sources.jar" \
-            ! -name "*-javadoc.jar" \
-            -exec cp {} output/ \;
+          cp extractor/build/libs/*.jar output/
           ls -lh output/
 
       - name: Upload JAR artifacts
